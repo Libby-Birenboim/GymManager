@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane prefHeight="341.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fitness.GymManagerController">
+   <center>
+      <TabPane prefHeight="342.0" prefWidth="443.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Membership">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="335.0" prefWidth="560.0">
+                     <children>
+                        <BorderPane layoutX="26.0" prefHeight="303.0" prefWidth="522.0">
+                           <center>
+                              <GridPane prefHeight="162.0" prefWidth="522.0" BorderPane.alignment="CENTER">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.19998779296876" minWidth="10.0" prefWidth="132.00003814697266" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="402.40001373291017" minWidth="10.0" prefWidth="391.1999618530274" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="First Name" />
+                                    <Label text="Last Name" GridPane.rowIndex="1" />
+                                    <Label text="Date of Birth" GridPane.rowIndex="2" />
+                                    <Label text="Location" GridPane.rowIndex="3" />
+                                    <Label text="Membership Type" GridPane.rowIndex="4" />
+                                    <TextField fx:id="memberFirstName" prefHeight="26.0" prefWidth="264.0" GridPane.columnIndex="1" />
+                                    <TextField fx:id="memberLastName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="memberLocation" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <DatePicker fx:id="memberDOB" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <children>
+                                          <RadioButton fx:id="memberStandard" mnemonicParsing="false" selected="true" text="Standard">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="mtype" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="memberFamily" mnemonicParsing="false" text="Family" toggleGroup="$mtype" />
+                                          <RadioButton fx:id="memberPremium" mnemonicParsing="false" prefHeight="18.0" prefWidth="92.0" text="Premium" toggleGroup="$mtype" />
+                                       </children>
+                                       <padding>
+                                          <Insets left="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <children>
+                                          <Button fx:id="memberAdd" mnemonicParsing="false" onAction="#doAddMember" text="Add" />
+                                          <Button fx:id="memberRemove" mnemonicParsing="false" onAction="#doR" text="Remove" />
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </center>
+                           <bottom>
+                              <TextArea fx:id="memberOutput" prefHeight="87.0" prefWidth="522.0" BorderPane.alignment="CENTER" />
+                           </bottom>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Fitness Class">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane layoutX="15.0" layoutY="10.0" prefHeight="288.0" prefWidth="530.0">
+                           <center>
+                              <GridPane prefHeight="181.0" prefWidth="537.0" BorderPane.alignment="CENTER">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.20001220703125" minWidth="10.0" prefWidth="139.20001220703125" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.79998779296875" minWidth="10.0" prefWidth="420.79998779296875" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Class Name" />
+                                    <Label text="Instructor" GridPane.rowIndex="1" />
+                                    <Label text="Location" GridPane.rowIndex="2" />
+                                    <Label text="First Name" GridPane.rowIndex="3" />
+                                    <Label text="Last Name" GridPane.rowIndex="4" />
+                                    <Label text="Date of Birth" GridPane.rowIndex="5" />
+                                    <Label text="Checkin Type" GridPane.rowIndex="6" />
+                                    <TextField fx:id="fcClassName" GridPane.columnIndex="1" />
+                                    <TextField fx:id="fcInstructor" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="fcLocation" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="fcFirstName" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextField fx:id="fcLastName" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <DatePicker fx:id="fcDOB" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                       <children>
+                                          <RadioButton fx:id="fcMember" mnemonicParsing="false" selected="true" text="Member">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="fctype" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="fcGuest" mnemonicParsing="false" text="Guest" toggleGroup="$fctype" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#doFitnessAdd" text="Add" />
+                                          <Button mnemonicParsing="false" onAction="#doFitnessRemove" text="Remove" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </center>
+                           <bottom>
+                              <TextArea fx:id="fcOutput" prefHeight="86.0" prefWidth="530.0" BorderPane.alignment="CENTER" />
+                           </bottom>
+                        </BorderPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Information Hub">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="313.0" prefWidth="560.0">
+                           <top>
+                              <MenuBar prefHeight="26.0" prefWidth="439.0" BorderPane.alignment="CENTER">
+                                <menus>
+                                  <Menu mnemonicParsing="false" text="Member Database">
+                                    <items>
+                                          <MenuItem mnemonicParsing="false" onAction="#doP" text="Print" />
+                                      <MenuItem mnemonicParsing="false" onAction="#doPC" text="Print by County/Zipcode" />
+                                          <MenuItem mnemonicParsing="false" onAction="#doPN" text="Print by Last/First Names" />
+                                          <MenuItem mnemonicParsing="false" onAction="#doPD" text="Print by Expiration Date" />
+                                          <MenuItem mnemonicParsing="false" onAction="#doLM" text="Load Member List from file" />
+                                    </items>
+                                  </Menu>
+                                  <Menu mnemonicParsing="false" text="Class Schedule">
+                                    <items>
+                                          <MenuItem mnemonicParsing="false" onAction="#doLS" text="Load Class Schedule from file" />
+                                      <MenuItem mnemonicParsing="false" onAction="#doS" text="Show All Cases" />
+                                    </items>
+                                  </Menu>
+                                  <Menu mnemonicParsing="false" text="Membership Fee">
+                                    <items>
+                                          <MenuItem mnemonicParsing="false" onAction="#doPF" text="First Bill" />
+                                      <MenuItem mnemonicParsing="false" onAction="#doPFNextBill" text="Next Bill" />
+                                    </items>
+                                  </Menu>
+                                </menus>
+                              </MenuBar>
+                           </top>
+                           <center>
+                              <TextArea fx:id="informationOutput" prefHeight="183.0" prefWidth="560.0" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+
+</BorderPane>
